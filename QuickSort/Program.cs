@@ -128,19 +128,19 @@ namespace QuickSort
         }
 
         public static void TestHugeMassive()
-        { //Тестирование сортировки в массиве из 1 000 000 000 случайных элементов
+        { //Тестирование сортировки в массиве из 100 000 000 случайных элементов
             var rnd = new Random();
-            int size = 10000000;
+            int size = 100000000;
             int[] thousandNumbers = new int[size];
             int unsorted = -1;
 
             for (int i = 0; i < size; i++)
-                thousandNumbers[i] = rnd.Next(0, 10000000);
+                thousandNumbers[i] = rnd.Next(0, 100000000);
             QuickSort(thousandNumbers);
 
             for (int i = 0; i < 10; i++)
             {
-                int position = rnd.Next(0, 10000000);
+                int position = rnd.Next(0, 100000000);
                 if (thousandNumbers[position] > thousandNumbers[position + 1])
                 {
                     unsorted = position;
@@ -149,9 +149,9 @@ namespace QuickSort
             }
 
             if (unsorted == -1)
-                Console.WriteLine("Сортировка массива из 10000000 случайных значений работает корректно");
+                Console.WriteLine("Сортировка массива из 100000000 случайных значений работает корректно");
             else
-                Console.WriteLine("! Сортировка массива из 10000000 случайных значений не сработала при перестановке элементов одной из пар значений: {0} > {1}", thousandNumbers[unsorted], thousandNumbers[unsorted + 1]);
+                Console.WriteLine("! Сортировка массива из 100000000 случайных значений не сработала при перестановке элементов одной из пар значений: {0} > {1}", thousandNumbers[unsorted], thousandNumbers[unsorted + 1]);
         }
     }
 }
