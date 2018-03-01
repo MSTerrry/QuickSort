@@ -116,8 +116,7 @@ namespace QuickSort
         }
 
         private static void TestEmptyArray()
-        {
-            //Тестирование сортировки в пустом массиве (содержащем 0 элементов)
+        { //Тестирование сортировки в пустом массиве (содержащем 0 элементов)
             int[] emptyArray = new int[0];
 
             QuickSort(emptyArray);
@@ -156,46 +155,3 @@ namespace QuickSort
         }
     }
 }
-/*
- algorithm quicksort(A, lo, hi) is
-    if lo < hi then
-        p := partition(A, lo, hi)
-        quicksort(A, lo, p)
-        quicksort(A, p + 1, hi)
-
-algorithm partition(A, lo, hi) is
-    pivot := A[lo]
-    i := lo - 1
-    j := hi + 1
-    loop forever
-        do
-            i := i + 1
-        while A[i] < pivot
-
-        do
-            j := j - 1
-        while A[j] > pivot
-
-        if i >= j then
-            return j
-
-        swap A[i] with A[j]*/
-
-/*int f=first, l=last;
-mid=mas[(f+l) / 2]; //вычисление опорного элемента
-do
-{
-while (mas[f]<mid) f++;
-while (mas[l]>mid) l--;
-if (f<=l) //перестановка элементов
-{
-count=mas[f];
-mas[f]=mas[l];
-mas[l]=count;
-f++;
-l--;
-}
-} while (f<l);
-if (first<l) quicksort(mas, first, l);
-if (f<last) quicksort(mas, f, last);
-}*/
